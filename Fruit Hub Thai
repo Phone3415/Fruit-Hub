@@ -1,1 +1,64 @@
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local GUI = Mercury:Create{
+    Name = "Fruit Hub",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
+    Link = "Fruit Hub"
+}
+local Tab = GUI:Tab{
+	Name = "Main Tab",
+	Icon = "rbxassetid://8569322835"
+}
+local MyDropdown = Tab:Dropdown{
+	Name = "ผล",
+	StartingText = "เลือก",
+	Description = "เลือกผล",
+	Items = {
+		--BombtoIce
+		{"ระเบิด", "Bomb Fruit"},{"หนาม","Spike Fruit"},{"แยกส่วน", "Chop Fruit"},{"สปริง", "Spring Fruit"},{"กิโล","Kilo Fruit"},{"ควัน", "Smoke Fruit"},{"ใบพัด", "Spin Fruit"},{"ไฟ", "Flame Fruit"},{"ฟอลค่อน","Bird: Falcon Fruit"},{"น้ำแข็ง","Ice Fruit"},
+		--SandtoDoor
+		{"ทราย","Sand Fruit"},{"มืด","Dark Fruit"},{"คืนชีพ","Revive Fruit"},{"เพชร","Diamond Fruit"},{"แสง","Light Fruit"},{"ความรัก","Love Fruit"},{"ยาง","Rubber Fruit"},{"บาเรียย์","Barrier Fruit"},{"แม็กม่า","Magma Fruit"},{"ประตู","Door Fruit"},
+		--QuaketoVenom
+		{"สั่น","Quake Fruit"},{"พระ","Human: Buddha Fruit"},{"ด้าย","String Fruit"},{"ฟีนิกซ์","Bird: Phoenix Fruit"},{"สายฟ้า","Rumble Fruit"},{"ตีนหมี","Paw Fruit"},{"แรงโน้มถ่วง","Gravity Fruit"},{"โมจิ","Dough Fruit"},{"เงา","Shadow Fruit"},{"พิษ","Venom Fruit"},
+		--ControltoDragon
+		{"ผ่าตัด","Control Fruit"},{"วิญญาณ","Soul Fruit"},{"มังกร","Dragon Fruit"}
+	},
+	Callback = function(fruit) Fruits = fruit return end
+}
 
+Tab:Button{
+	Name = "ดึงผล",
+	Description = "ดึงผลที่เลือก",
+	Callback = function()
+game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	end
+}
+
+Tab:Button{
+	Name = "วาปผล",
+	Description = "วาปไปหาผลที่เลือก",
+	Callback = function()
+	if game.PlaceId == 7449423635 then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame
+		wait(0.3)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12466.28515625, 375.2577209472656, -7544.80615234375)
+	end
+		if game.PlaceId == 4442272183 then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame
+		wait(0.3)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6508.55810546875, 83.53028106689453, -132.83953857421875)
+	end
+	if game.PlaceId == 2753915549 then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame
+		wait(0.3)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61172.35546875, -1.3027108907699585, 1881.1717529296875)
+	end
+	end
+}
+
+GUI:Credit{
+	Name = "ทำโดย",
+	Description = "Phone3415",
+	V3rm = nil,
+	Discord = nil
+}

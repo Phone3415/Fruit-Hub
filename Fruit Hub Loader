@@ -1,0 +1,19 @@
+if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Fruit Hub Loader", "DarkTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Language")
+Section:NewDropdown("Select Language", "", {"English", "ไทย"}, function(lg)
+    Language = lg
+end)
+Section:NewButton("Comfirm", "", function()
+    if Language == "English" then
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub'))()
+Library:ToggleUI()
+	end
+	if Language == "ไทย" then
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Thai'))()
+Library:ToggleUI()
+	end
+end)
+end

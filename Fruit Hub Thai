@@ -3,7 +3,7 @@ local GUI = Mercury:Create{
     Name = "Fruit Hub",
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Dark,
-    Link = "Fruit Hub"
+    Link = "https://fruit-hub/"
 }
 local Tab = GUI:Tab{
 	Name = "Main Tab",

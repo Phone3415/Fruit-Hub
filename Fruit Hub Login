@@ -1,0 +1,37 @@
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+
+local GUI = Mercury:Create{
+    Name = "Login Fruit Hub",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
+    Link = "https://fruit-hub/"
+}
+
+local Tab = GUI:Tab{
+	Name = "Login",
+	Icon = "rbxassetid://8569322835"
+}
+
+Tab:Textbox{
+	Name = "Username",
+	Callback = function(username) Username = username end
+}
+
+Tab:Button{
+	Name = "Login",
+	Description = "Login",
+	Callback = function()
+	if Username == "Owner" and game.Players.LocalPlayer.Name == "Phone3415" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
+		if Username == "OMK158" and game.Players.LocalPlayer.Name == "OMK158" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
+		if Username == "ohm_coco" and game.Players.LocalPlayer.Name == "ohm_coco" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
+	end
+}

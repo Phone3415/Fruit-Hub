@@ -33,5 +33,25 @@ Tab:Button{
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
 		game.CoreGui.ScreenGui:Destroy()
 	end
+			if Username == "gtr6yy5" and game.Players.LocalPlayer.Name == "gtr6yy5" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
+				if Username == "wn5der" and game.Players.LocalPlayer.Name == "wn5der" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
+				if Username == "mnesaew" and game.Players.LocalPlayer.Name == "mnesaew" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
+				if Username == "xMoty_145x" and game.Players.LocalPlayer.Name == "xMoty_145x" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
+				if Username == "BOX0396X1" and game.Players.LocalPlayer.Name == "BOX0396X1" then
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Phone3415/Fruit-Hub/main/Fruit%20Hub%20Loader'))()
+		game.CoreGui.ScreenGui:Destroy()
+	end
 	end
 }

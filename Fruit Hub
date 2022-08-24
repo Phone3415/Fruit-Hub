@@ -89,6 +89,14 @@ Tab:Button{
 	end
 }
 
+Tab:Button{
+	Name = "Fruit Inventory",
+	Description = "Open/Hide Fruit Inventory",
+	Callback = function()
+	game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible = not game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible
+	end
+}
+
 GUI:Credit{
 	Name = "Made By",
 	Description = "Phone3415",

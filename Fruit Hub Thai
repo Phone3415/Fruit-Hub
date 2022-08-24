@@ -26,11 +26,22 @@ local MyDropdown = Tab:Dropdown{
 	Callback = function(fruit) Fruits = fruit return end
 }
 
+Tab:Toggle{
+	Name = "ปิดดึงผล",
+	StartingState = false,
+	Description = "ปิดใช้งานปุ่มดึงผล",
+	Callback = function(bf)
+	BringFruit = bf
+	end
+}
+
 Tab:Button{
 	Name = "ดึงผล",
 	Description = "ดึงผลที่เลือก",
 	Callback = function()
+	if BringFruit == false then
 game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	end
 	end
 }
 

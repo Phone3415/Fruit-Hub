@@ -34,7 +34,7 @@ Tab:Toggle{
 	BringFruit = bf
 	end
 }
-
+BringFruit = false
 Tab:Button{
 	Name = "Bring Fruit",
 	Description = "Bring Fruit Select",

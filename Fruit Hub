@@ -47,7 +47,7 @@ game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Ch
 
 Tab:Button{
 	Name = "Teleport Fruit",
-	Description = "Teleport Fruit Select",
+	Description = "Teleport to Fruit Select",
 	Callback = function()
 	if game.PlaceId == 7449423635 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame
@@ -69,7 +69,7 @@ Tab:Button{
 
 Tab:Button{
 	Name = "Teleport Fruit Spawn",
-	Description = "Teleport Fruit Spawn",
+	Description = "Teleport to Spawned Fruit",
 	Callback = function()
 	if game.PlaceId == 7449423635 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame

@@ -73,16 +73,19 @@ Tab:Button{
 	Callback = function()
 	if game.PlaceId == 7449423635 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
+		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12466.28515625, 375.2577209472656, -7544.80615234375)
 	end
 		if game.PlaceId == 4442272183 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
+		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6508.55810546875, 83.53028106689453, -132.83953857421875)
 	end
 	if game.PlaceId == 2753915549 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
+		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61172.35546875, -1.3027108907699585, 1881.1717529296875)
 	end
@@ -96,6 +99,139 @@ Tab:Button{
 	game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible = not game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible
 	end
 }
+
+local DropFruit = GUI:Tab{
+	Name = "DropFruit Tab",
+	Icon = "rbxassetid://10713204965"
+}
+local DropFruit1 = DropFruit:Dropdown{
+	Name = "Drop Fruit",
+	StartingText = "Select",
+	Description = "Select Fruit Drop",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb Fruit"},{"Spike","Spike Fruit"},{"Chop", "Chop Fruit"},{"Spring", "Spring Fruit"},{"Kilo","Kilo Fruit"},{"Smoke", "Smoke Fruit"},{"Spin", "Spin Fruit"},{"Flame", "Flame Fruit"},{"Falcon","Bird: Falcon Fruit"},{"Ice","Ice Fruit"},
+		--SandtoDoor
+		{"Sand","Sand Fruit"},{"Dark","Dark Fruit"},{"Revive","Revive Fruit"},{"Diamond","Diamond Fruit"},{"Light","Light Fruit"},{"Love","Love Fruit"},{"Rubber","Rubber Fruit"},{"Barrier","Barrier Fruit"},{"Magma","Magma Fruit"},{"Door","Door Fruit"},
+		--QuaketoVenom
+		{"Quake","Quake Fruit"},{"Buddha","Human: Buddha Fruit"},{"String","String Fruit"},{"Phoenix","Bird: Phoenix Fruit"},{"Rumble","Rumble Fruit"},{"Paw","Paw Fruit"},{"Gravity","Gravity Fruit"},{"Dough","Dough Fruit"},{"Shadow","Shadow Fruit"},{"Venom","Venom Fruit"},
+		--ControltoDragon
+		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
+	},
+	Callback = function(dpfruit) DropFruitName = dpfruit return end
+}
+local DropFruit2 = DropFruit:Dropdown{
+	Name = "Drop Fruit",
+	StartingText = "Select",
+	Description = "Select Fruit Drop",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb Fruit"},{"Spike","Spike Fruit"},{"Chop", "Chop Fruit"},{"Spring", "Spring Fruit"},{"Kilo","Kilo Fruit"},{"Smoke", "Smoke Fruit"},{"Spin", "Spin Fruit"},{"Flame", "Flame Fruit"},{"Falcon","Bird: Falcon Fruit"},{"Ice","Ice Fruit"},
+		--SandtoDoor
+		{"Sand","Sand Fruit"},{"Dark","Dark Fruit"},{"Revive","Revive Fruit"},{"Diamond","Diamond Fruit"},{"Light","Light Fruit"},{"Love","Love Fruit"},{"Rubber","Rubber Fruit"},{"Barrier","Barrier Fruit"},{"Magma","Magma Fruit"},{"Door","Door Fruit"},
+		--QuaketoVenom
+		{"Quake","Quake Fruit"},{"Buddha","Human: Buddha Fruit"},{"String","String Fruit"},{"Phoenix","Bird: Phoenix Fruit"},{"Rumble","Rumble Fruit"},{"Paw","Paw Fruit"},{"Gravity","Gravity Fruit"},{"Dough","Dough Fruit"},{"Shadow","Shadow Fruit"},{"Venom","Venom Fruit"},
+		--ControltoDragon
+		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
+	},
+	Callback = function(dpfruit) DropFruitName = dpfruit return end
+}
+local DropFruit3 = DropFruit:Dropdown{
+	Name = "Drop Fruit",
+	StartingText = "Select",
+	Description = "Select Fruit Drop",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb Fruit"},{"Spike","Spike Fruit"},{"Chop", "Chop Fruit"},{"Spring", "Spring Fruit"},{"Kilo","Kilo Fruit"},{"Smoke", "Smoke Fruit"},{"Spin", "Spin Fruit"},{"Flame", "Flame Fruit"},{"Falcon","Bird: Falcon Fruit"},{"Ice","Ice Fruit"},
+		--SandtoDoor
+		{"Sand","Sand Fruit"},{"Dark","Dark Fruit"},{"Revive","Revive Fruit"},{"Diamond","Diamond Fruit"},{"Light","Light Fruit"},{"Love","Love Fruit"},{"Rubber","Rubber Fruit"},{"Barrier","Barrier Fruit"},{"Magma","Magma Fruit"},{"Door","Door Fruit"},
+		--QuaketoVenom
+		{"Quake","Quake Fruit"},{"Buddha","Human: Buddha Fruit"},{"String","String Fruit"},{"Phoenix","Bird: Phoenix Fruit"},{"Rumble","Rumble Fruit"},{"Paw","Paw Fruit"},{"Gravity","Gravity Fruit"},{"Dough","Dough Fruit"},{"Shadow","Shadow Fruit"},{"Venom","Venom Fruit"},
+		--ControltoDragon
+		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
+	},
+	Callback = function(dpfruit) DropFruitName = dpfruit return end
+}
+local DropFruit4 = DropFruit:Dropdown{
+	Name = "Drop Fruit",
+	StartingText = "Select",
+	Description = "Select Fruit Drop",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb Fruit"},{"Spike","Spike Fruit"},{"Chop", "Chop Fruit"},{"Spring", "Spring Fruit"},{"Kilo","Kilo Fruit"},{"Smoke", "Smoke Fruit"},{"Spin", "Spin Fruit"},{"Flame", "Flame Fruit"},{"Falcon","Bird: Falcon Fruit"},{"Ice","Ice Fruit"},
+		--SandtoDoor
+		{"Sand","Sand Fruit"},{"Dark","Dark Fruit"},{"Revive","Revive Fruit"},{"Diamond","Diamond Fruit"},{"Light","Light Fruit"},{"Love","Love Fruit"},{"Rubber","Rubber Fruit"},{"Barrier","Barrier Fruit"},{"Magma","Magma Fruit"},{"Door","Door Fruit"},
+		--QuaketoVenom
+		{"Quake","Quake Fruit"},{"Buddha","Human: Buddha Fruit"},{"String","String Fruit"},{"Phoenix","Bird: Phoenix Fruit"},{"Rumble","Rumble Fruit"},{"Paw","Paw Fruit"},{"Gravity","Gravity Fruit"},{"Dough","Dough Fruit"},{"Shadow","Shadow Fruit"},{"Venom","Venom Fruit"},
+		--ControltoDragon
+		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
+	},
+	Callback = function(dpfruit) DropFruitName = dpfruit return end
+}
+local DropFruit5 = DropFruit:Dropdown{
+	Name = "Drop Fruit",
+	StartingText = "Select",
+	Description = "Select Fruit Drop",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb Fruit"},{"Spike","Spike Fruit"},{"Chop", "Chop Fruit"},{"Spring", "Spring Fruit"},{"Kilo","Kilo Fruit"},{"Smoke", "Smoke Fruit"},{"Spin", "Spin Fruit"},{"Flame", "Flame Fruit"},{"Falcon","Bird: Falcon Fruit"},{"Ice","Ice Fruit"},
+		--SandtoDoor
+		{"Sand","Sand Fruit"},{"Dark","Dark Fruit"},{"Revive","Revive Fruit"},{"Diamond","Diamond Fruit"},{"Light","Light Fruit"},{"Love","Love Fruit"},{"Rubber","Rubber Fruit"},{"Barrier","Barrier Fruit"},{"Magma","Magma Fruit"},{"Door","Door Fruit"},
+		--QuaketoVenom
+		{"Quake","Quake Fruit"},{"Buddha","Human: Buddha Fruit"},{"String","String Fruit"},{"Phoenix","Bird: Phoenix Fruit"},{"Rumble","Rumble Fruit"},{"Paw","Paw Fruit"},{"Gravity","Gravity Fruit"},{"Dough","Dough Fruit"},{"Shadow","Shadow Fruit"},{"Venom","Venom Fruit"},
+		--ControltoDragon
+		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
+	},
+	Callback = function(dpfruit) DropFruitName = dpfruit return end
+}
+DropFruit:Toggle{
+	Name = "Auto Drop",
+	StartingState = false,
+	Description = "Auto Drop Fruit Select",
+	Callback = function(autodrop) AutoDrop = autodrop end
+}
+AutoDrop = false
+spawn(function()
+while wait() do
+	if AutoDrop then
+		pcall(function()
+local args = {
+    [1] = "Drop"
+}
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(DropFruitName))
+game.Players.LocalPlayer.Character:FindFirstChild(DropFruitName).EatRemote:InvokeServer(unpack(args))			
+		end)
+	end
+end
+end)
+local EatFruit = GUI:Tab{
+	Name = "EatFruit Tab",
+	Icon = "rbxassetid://10713905262"
+}
+local EatFruitSec = EatFruit:Dropdown{
+	Name = "Eat Fruit",
+	StartingText = "Select",
+	Description = "Select Fruit Eat",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb Fruit"},{"Spike","Spike Fruit"},{"Chop", "Chop Fruit"},{"Spring", "Spring Fruit"},{"Kilo","Kilo Fruit"},{"Smoke", "Smoke Fruit"},{"Spin", "Spin Fruit"},{"Flame", "Flame Fruit"},{"Falcon","Bird: Falcon Fruit"},{"Ice","Ice Fruit"},
+		--SandtoDoor
+		{"Sand","Sand Fruit"},{"Dark","Dark Fruit"},{"Revive","Revive Fruit"},{"Diamond","Diamond Fruit"},{"Light","Light Fruit"},{"Love","Love Fruit"},{"Rubber","Rubber Fruit"},{"Barrier","Barrier Fruit"},{"Magma","Magma Fruit"},{"Door","Door Fruit"},
+		--QuaketoVenom
+		{"Quake","Quake Fruit"},{"Buddha","Human: Buddha Fruit"},{"String","String Fruit"},{"Phoenix","Bird: Phoenix Fruit"},{"Rumble","Rumble Fruit"},{"Paw","Paw Fruit"},{"Gravity","Gravity Fruit"},{"Dough","Dough Fruit"},{"Shadow","Shadow Fruit"},{"Venom","Venom Fruit"},
+		--ControltoDragon
+		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
+	},
+	Callback = function(eatfruit) EatFruitName = eatfruit return end
+}
+EatFruit:Toggle{
+	Name = "Auto Eat",
+	StartingState = false,
+	Description = "Auto Eat Fruit Select",
+	Callback = function(autoeat) AutoEat = autoeat end
+}
+AutoEat = false
+spawn(function() while wait() do if AutoEat then pcall(function() game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(EatFruitName)) game:GetService("Players").LocalPlayer.Character:FindFirstChild(EatFruitName).EatRemote:InvokeServer() end) end end end)
 
 GUI:Credit{
 	Name = "Made By",

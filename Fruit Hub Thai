@@ -100,6 +100,16 @@ Tab:Button{
 	end
 }
 
+
+function dropf(namefdrop)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(namefdrop))
+local args = {
+    [1] = "Drop"
+}
+game.Players.LocalPlayer.Character:FindFirstChild(namefdrop).EatRemote:InvokeServer(unpack(args))
+end
+
+
 local DropFruit = GUI:Tab{
 	Name = "DropFruit Tab",
 	Icon = "rbxassetid://10713204965"

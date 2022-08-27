@@ -104,6 +104,16 @@ local DropFruit = GUI:Tab{
 	Name = "DropFruit Tab",
 	Icon = "rbxassetid://10713204965"
 }
+
+function dropf(namefdrop)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(namefdrop))
+local args = {
+    [1] = "Drop"
+}
+game.Players.LocalPlayer.Character:FindFirstChild(namefdrop).EatRemote:InvokeServer(unpack(args))
+end
+
+
 local DropFruit1 = DropFruit:Dropdown{
 	Name = "Drop Fruit",
 	StartingText = "Select",
@@ -118,7 +128,7 @@ local DropFruit1 = DropFruit:Dropdown{
 		--ControltoDragon
 		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
 	},
-	Callback = function(dpfruit) DropFruitName = dpfruit return end
+	Callback = function(dpfruit1) DFName1 = dpfruit1 return end
 }
 local DropFruit2 = DropFruit:Dropdown{
 	Name = "Drop Fruit",
@@ -134,7 +144,7 @@ local DropFruit2 = DropFruit:Dropdown{
 		--ControltoDragon
 		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
 	},
-	Callback = function(dpfruit) DropFruitName = dpfruit return end
+	Callback = function(dpfruit2) DFName2 = dpfruit2 return end
 }
 local DropFruit3 = DropFruit:Dropdown{
 	Name = "Drop Fruit",
@@ -150,7 +160,7 @@ local DropFruit3 = DropFruit:Dropdown{
 		--ControltoDragon
 		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
 	},
-	Callback = function(dpfruit) DropFruitName = dpfruit return end
+	Callback = function(dpfruit3) DFName3 = dpfruit3 return end
 }
 local DropFruit4 = DropFruit:Dropdown{
 	Name = "Drop Fruit",
@@ -166,7 +176,7 @@ local DropFruit4 = DropFruit:Dropdown{
 		--ControltoDragon
 		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
 	},
-	Callback = function(dpfruit) DropFruitName = dpfruit return end
+	Callback = function(dpfruit4) DFName4 = dpfruit4 return end
 }
 local DropFruit5 = DropFruit:Dropdown{
 	Name = "Drop Fruit",
@@ -182,7 +192,7 @@ local DropFruit5 = DropFruit:Dropdown{
 		--ControltoDragon
 		{"Control","Control Fruit"},{"Soul","Soul Fruit"},{"Dragon","Dragon Fruit"}
 	},
-	Callback = function(dpfruit) DropFruitName = dpfruit return end
+	Callback = function(dpfruit5) DFName5 = dpfruit5 return end
 }
 DropFruit:Toggle{
 	Name = "Auto Drop",
@@ -191,19 +201,12 @@ DropFruit:Toggle{
 	Callback = function(autodrop) AutoDrop = autodrop end
 }
 AutoDrop = false
-spawn(function()
-while wait() do
-	if AutoDrop then
-		pcall(function()
-local args = {
-    [1] = "Drop"
-}
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(DropFruitName))
-game.Players.LocalPlayer.Character:FindFirstChild(DropFruitName).EatRemote:InvokeServer(unpack(args))			
-		end)
-	end
-end
-end)
+spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName1) end) end end end)
+spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName2) end) end end end)
+spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName3) end) end end end)
+spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName4) end) end end end)
+spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName5) end) end end end)
+
 local EatFruit = GUI:Tab{
 	Name = "EatFruit Tab",
 	Icon = "rbxassetid://10713905262"

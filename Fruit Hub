@@ -238,9 +238,96 @@ EatFruit:Toggle{
 AutoEat = false
 spawn(function() while wait() do if AutoEat then pcall(function() game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(EatFruitName)) game:GetService("Players").LocalPlayer.Character:FindFirstChild(EatFruitName).EatRemote:InvokeServer() end) end end end)
 
+local BuyFruitsName = EatFruit:Dropdown{
+	Name = "Auto Buy Fruit",
+	StartingText = "Select",
+	Description = "Select Fruit",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb-Bomb"},{"Spike","Spike-Spike"},{"Chop", "Chop-Chop"},{"Spring", "Spring-Spring"},{"Kilo","Kilo-Kilo"},{"Smoke", "Smoke-Smoke"},{"Spin", "Spin-Spin"},{"Flame", "Flame-Flame"},{"Falcon","Bird-Bird: Falcon"},{"Ice","Ice-Ice"},
+		--SandtoDoor
+		{"Sand","Sand-Sand"},{"Dark","Dark-Dark"},{"Revive","Revive-Revive"},{"Diamond","Diamond-Diamond"},{"Light","Light-Light"},{"Love","Love-Love"},{"Rubber","Rubber-Rubber"},{"Barrier","Barrier-Barrier"},{"Magma","Magma-Magma"},{"Door","Door-Door"},
+		--QuaketoVenom
+		{"Quake","Quake-Quake"},{"Buddha","Human-Human: Buddha"},{"String","String-String"},{"Phoenix","Bird-Bird: Phoenix"},{"Rumble","Rumble-Rumble"},{"Paw","Paw-Paw"},{"Gravity","Gravity-Gravity"},{"Dough","Dough-Dough"},{"Shadow","Shadow-Shadow"},{"Venom","Venom-Venom"},
+		--ControltoDragon
+		{"Control","Control-Control"},{"Soul","Soul-Soul"},{"Dragon","Dragon-Dragon"}
+	},
+	Callback = function(abf) AutoBuyFruit = abf return end
+}
+EatFruit:Toggle{
+	Name = "Auto Buy Fruit",
+	StartingState = false,
+	Description = "Auto Buy Fruit Selected",
+	Callback = function(abfs) AutoBuyFruitTog = abfs end
+}
+AutoBuyFruit = false
+spawn(function() while wait() do if AutoBuyFruitTog then pcall(function() local args = {[1] = "SwitchFruit",[2] = AutoBuyFruit} local args1 = {[1] = "PurchaseRawFruit",[2] = AutoBuyFruit,[3] = false} game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args1)) end) end end end)
+
+EatFruit:Toggle{
+	Name = "Random Fruit",
+	StartingState = false,
+	Description = "Auto Random Fruit",
+	Callback = function(arf) AutoRanFruit = arf end
+}
+AutoRanFruit = false
+spawn(function() while wait() do if AutoRanFruit then pcall(function() local args = {[1] = "Cousin",[2] = "Buy"} game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) end) end end end)
+EatFruit:Button{
+	Name = "Random",
+	Description = "Random Fruit",
+	Callback = function() local args = {[1] = "Cousin",[2] = "Buy"} game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) end
+}
+
 GUI:Credit{
 	Name = "Made By",
 	Description = "Phone3415",
 	V3rm = nil,
 	Discord = nil
 }
+
+local StoreUI = GUI:Tab{
+	Name = "Store Tab",
+	Icon = "rbxassetid://10735943982"
+}
+
+StoreUI:Toggle{
+	Name = "Store Fruit",
+	StartingState = false,
+	Description = "Store All Fruit",
+	Callback = function(stf) StoreAll = stf end
+}
+StoreAll = false
+function StoreFruit(StoreFruitName) local args = {[1] = "StoreFruit",[2] = StoreFruitName} game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) end
+
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bomb Fruit") and StoreAll then pcall(function() StoreFruit("Bomb-Bomb") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spike Fruit") and StoreAll then pcall(function() StoreFruit("Spike-Spike") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Chop Fruit") and StoreAll then pcall(function() StoreFruit("Chop-Chop") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spring Fruit") and StoreAll then pcall(function() StoreFruit("Spring-Spring") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Kilo Fruit") and StoreAll then pcall(function() StoreFruit("Kilo-Kilo") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Smoke Fruit") and StoreAll then pcall(function() StoreFruit("Smoke-Smoke") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Spin Fruit") and StoreAll then pcall(function() StoreFruit("Spin-Spin") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flame Fruit") and StoreAll then pcall(function() StoreFruit("Flame-Flame") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bird: Falcon Fruit") and StoreAll then pcall(function() StoreFruit("Bird-Bird: Falcon") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Ice Fruit") and StoreAll then pcall(function() StoreFruit("Ice-Ice") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Sand Fruit") and StoreAll then pcall(function() StoreFruit("Sand-Sand") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dark Fruit") and StoreAll then pcall(function() StoreFruit("Dark-Dark") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Revive Fruit") and StoreAll then pcall(function() StoreFruit("Revive-Revive") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Diamond Fruit") and StoreAll then pcall(function() StoreFruit("Diamond-Diamond") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Light Fruit") and StoreAll then pcall(function() StoreFruit("Light-Light") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Love Fruit") and StoreAll then pcall(function() StoreFruit("Love-Love") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rubber Fruit") and StoreAll then pcall(function() StoreFruit("Rubber-Rubber") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Barrier Fruit") and StoreAll then pcall(function() StoreFruit("Barrier-Barrier") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Magma Fruit") and StoreAll then pcall(function() StoreFruit("Magma-Magma") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Door Fruit") and StoreAll then pcall(function() StoreFruit("Door-Door") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Quake Fruit") and StoreAll then pcall(function() StoreFruit("Quake-Quake") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Human: Buddha Fruit") and StoreAll then pcall(function() StoreFruit("Human-Human: Buddha") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("String Fruit") and StoreAll then pcall(function() StoreFruit("String-String") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bird: Phoenix Fruit") and StoreAll then pcall(function() StoreFruit("Bird-Bird: Phoenix") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rumble Fruit") and StoreAll then pcall(function() StoreFruit("Rumble-Rumble") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Paw Fruit") and StoreAll then pcall(function() StoreFruit("Paw-Paw") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Gravity Fruit") and StoreAll then pcall(function() StoreFruit("Gravity-Gravity") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dough Fruit") and StoreAll then pcall(function() StoreFruit("Dough-Dough") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Shadow Fruit") and StoreAll then pcall(function() StoreFruit("Shadow-Shadow") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Venom Fruit") and StoreAll then pcall(function() StoreFruit("Venom-Venom") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Control Fruit") and StoreAll then pcall(function() StoreFruit("Control-Control") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Soul Fruit") and StoreAll then pcall(function() StoreFruit("Soul-Soul") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Fruit") and StoreAll then pcall(function() StoreFruit("Dragon-Dragon") end) end end end)

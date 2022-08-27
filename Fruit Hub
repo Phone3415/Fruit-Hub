@@ -50,17 +50,20 @@ Tab:Button{
 	Description = "Teleport to Fruit Select",
 	Callback = function()
 	if game.PlaceId == 7449423635 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame * CFrame.new(0,7,0)
+		game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12466.28515625, 375.2577209472656, -7544.80615234375)
 	end
 		if game.PlaceId == 4442272183 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame * CFrame.new(0,7,0)
+		game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6508.55810546875, 83.53028106689453, -132.83953857421875)
 	end
 	if game.PlaceId == 2753915549 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame * CFrame.new(0,7,0)
+		game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61172.35546875, -1.3027108907699585, 1881.1717529296875)
 	end
@@ -72,20 +75,19 @@ Tab:Button{
 	Description = "Teleport to Spawned Fruit",
 	Callback = function()
 	if game.PlaceId == 7449423635 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame * CFrame.new(0,7,0)
 		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12466.28515625, 375.2577209472656, -7544.80615234375)
 	end
 		if game.PlaceId == 4442272183 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame * CFrame.new(0,7,0)
 		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6508.55810546875, 83.53028106689453, -132.83953857421875)
 	end
 	if game.PlaceId == 2753915549 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
-		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame * CFrame.new(0,7,0)		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61172.35546875, -1.3027108907699585, 1881.1717529296875)
 	end

@@ -5,6 +5,7 @@ local GUI = Mercury:Create{
     Theme = Mercury.Themes.Dark,
     Link = "https://fruit-hub/"
 }
+
 local Tab = GUI:Tab{
 	Name = "Main Tab",
 	Icon = "rbxassetid://8569322835"
@@ -331,3 +332,104 @@ spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backp
 spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Control Fruit") and StoreAll then pcall(function() StoreFruit("Control-Control") end) end end end)
 spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Soul Fruit") and StoreAll then pcall(function() StoreFruit("Soul-Soul") end) end end end)
 spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Fruit") and StoreAll then pcall(function() StoreFruit("Dragon-Dragon") end) end end end)
+
+local StoreSelect1 = StoreUI:Dropdown{
+	Name = "Select Fruit Store",
+	StartingText = "Select",
+	Description = "Select Fruit",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb-Bomb"},{"Spike","Spike-Spike"},{"Chop", "Chop-Chop"},{"Spring", "Spring-Spring"},{"Kilo","Kilo-Kilo"},{"Smoke", "Smoke-Smoke"},{"Spin", "Spin-Spin"},{"Flame", "Flame-Flame"},{"Falcon","Bird-Bird: Falcon"},{"Ice","Ice-Ice"},
+		--SandtoDoor
+		{"Sand","Sand-Sand"},{"Dark","Dark-Dark"},{"Revive","Revive-Revive"},{"Diamond","Diamond-Diamond"},{"Light","Light-Light"},{"Love","Love-Love"},{"Rubber","Rubber-Rubber"},{"Barrier","Barrier-Barrier"},{"Magma","Magma-Magma"},{"Door","Door-Door"},
+		--QuaketoVenom
+		{"Quake","Quake-Quake"},{"Buddha","Human-Human: Buddha"},{"String","String-String"},{"Phoenix","Bird-Bird: Phoenix"},{"Rumble","Rumble-Rumble"},{"Paw","Paw-Paw"},{"Gravity","Gravity-Gravity"},{"Dough","Dough-Dough"},{"Shadow","Shadow-Shadow"},{"Venom","Venom-Venom"},
+		--ControltoDragon
+		{"Control","Control-Control"},{"Soul","Soul-Soul"},{"Dragon","Dragon-Dragon"}
+	},
+	Callback = function(sfs1) SecFruitStore1 = sfs1 return end
+}
+local StoreSelect2 = StoreUI:Dropdown{
+	Name = "Select Fruit Store",
+	StartingText = "Select",
+	Description = "Select Fruit",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb-Bomb"},{"Spike","Spike-Spike"},{"Chop", "Chop-Chop"},{"Spring", "Spring-Spring"},{"Kilo","Kilo-Kilo"},{"Smoke", "Smoke-Smoke"},{"Spin", "Spin-Spin"},{"Flame", "Flame-Flame"},{"Falcon","Bird-Bird: Falcon"},{"Ice","Ice-Ice"},
+		--SandtoDoor
+		{"Sand","Sand-Sand"},{"Dark","Dark-Dark"},{"Revive","Revive-Revive"},{"Diamond","Diamond-Diamond"},{"Light","Light-Light"},{"Love","Love-Love"},{"Rubber","Rubber-Rubber"},{"Barrier","Barrier-Barrier"},{"Magma","Magma-Magma"},{"Door","Door-Door"},
+		--QuaketoVenom
+		{"Quake","Quake-Quake"},{"Buddha","Human-Human: Buddha"},{"String","String-String"},{"Phoenix","Bird-Bird: Phoenix"},{"Rumble","Rumble-Rumble"},{"Paw","Paw-Paw"},{"Gravity","Gravity-Gravity"},{"Dough","Dough-Dough"},{"Shadow","Shadow-Shadow"},{"Venom","Venom-Venom"},
+		--ControltoDragon
+		{"Control","Control-Control"},{"Soul","Soul-Soul"},{"Dragon","Dragon-Dragon"}
+	},
+	Callback = function(sfs2) SecFruitStore2 = sfs2 return end
+}
+local StoreSelect3 = StoreUI:Dropdown{
+	Name = "Select Fruit Store",
+	StartingText = "Select",
+	Description = "Select Fruit",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb-Bomb"},{"Spike","Spike-Spike"},{"Chop", "Chop-Chop"},{"Spring", "Spring-Spring"},{"Kilo","Kilo-Kilo"},{"Smoke", "Smoke-Smoke"},{"Spin", "Spin-Spin"},{"Flame", "Flame-Flame"},{"Falcon","Bird-Bird: Falcon"},{"Ice","Ice-Ice"},
+		--SandtoDoor
+		{"Sand","Sand-Sand"},{"Dark","Dark-Dark"},{"Revive","Revive-Revive"},{"Diamond","Diamond-Diamond"},{"Light","Light-Light"},{"Love","Love-Love"},{"Rubber","Rubber-Rubber"},{"Barrier","Barrier-Barrier"},{"Magma","Magma-Magma"},{"Door","Door-Door"},
+		--QuaketoVenom
+		{"Quake","Quake-Quake"},{"Buddha","Human-Human: Buddha"},{"String","String-String"},{"Phoenix","Bird-Bird: Phoenix"},{"Rumble","Rumble-Rumble"},{"Paw","Paw-Paw"},{"Gravity","Gravity-Gravity"},{"Dough","Dough-Dough"},{"Shadow","Shadow-Shadow"},{"Venom","Venom-Venom"},
+		--ControltoDragon
+		{"Control","Control-Control"},{"Soul","Soul-Soul"},{"Dragon","Dragon-Dragon"}
+	},
+	Callback = function(sfs3) SecFruitStore3 = sfs3 return end
+}
+local StoreSelect4 = StoreUI:Dropdown{
+	Name = "Select Fruit Store",
+	StartingText = "Select",
+	Description = "Select Fruit",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb-Bomb"},{"Spike","Spike-Spike"},{"Chop", "Chop-Chop"},{"Spring", "Spring-Spring"},{"Kilo","Kilo-Kilo"},{"Smoke", "Smoke-Smoke"},{"Spin", "Spin-Spin"},{"Flame", "Flame-Flame"},{"Falcon","Bird-Bird: Falcon"},{"Ice","Ice-Ice"},
+		--SandtoDoor
+		{"Sand","Sand-Sand"},{"Dark","Dark-Dark"},{"Revive","Revive-Revive"},{"Diamond","Diamond-Diamond"},{"Light","Light-Light"},{"Love","Love-Love"},{"Rubber","Rubber-Rubber"},{"Barrier","Barrier-Barrier"},{"Magma","Magma-Magma"},{"Door","Door-Door"},
+		--QuaketoVenom
+		{"Quake","Quake-Quake"},{"Buddha","Human-Human: Buddha"},{"String","String-String"},{"Phoenix","Bird-Bird: Phoenix"},{"Rumble","Rumble-Rumble"},{"Paw","Paw-Paw"},{"Gravity","Gravity-Gravity"},{"Dough","Dough-Dough"},{"Shadow","Shadow-Shadow"},{"Venom","Venom-Venom"},
+		--ControltoDragon
+		{"Control","Control-Control"},{"Soul","Soul-Soul"},{"Dragon","Dragon-Dragon"}
+	},
+	Callback = function(sfs4) SecFruitStore4 = sfs4 return end
+}
+local StoreSelect5 = StoreUI:Dropdown{
+	Name = "Select Fruit Store",
+	StartingText = "Select",
+	Description = "Select Fruit",
+	Items = {
+		--BombtoIce
+		{"Bomb", "Bomb-Bomb"},{"Spike","Spike-Spike"},{"Chop", "Chop-Chop"},{"Spring", "Spring-Spring"},{"Kilo","Kilo-Kilo"},{"Smoke", "Smoke-Smoke"},{"Spin", "Spin-Spin"},{"Flame", "Flame-Flame"},{"Falcon","Bird-Bird: Falcon"},{"Ice","Ice-Ice"},
+		--SandtoDoor
+		{"Sand","Sand-Sand"},{"Dark","Dark-Dark"},{"Revive","Revive-Revive"},{"Diamond","Diamond-Diamond"},{"Light","Light-Light"},{"Love","Love-Love"},{"Rubber","Rubber-Rubber"},{"Barrier","Barrier-Barrier"},{"Magma","Magma-Magma"},{"Door","Door-Door"},
+		--QuaketoVenom
+		{"Quake","Quake-Quake"},{"Buddha","Human-Human: Buddha"},{"String","String-String"},{"Phoenix","Bird-Bird: Phoenix"},{"Rumble","Rumble-Rumble"},{"Paw","Paw-Paw"},{"Gravity","Gravity-Gravity"},{"Dough","Dough-Dough"},{"Shadow","Shadow-Shadow"},{"Venom","Venom-Venom"},
+		--ControltoDragon
+		{"Control","Control-Control"},{"Soul","Soul-Soul"},{"Dragon","Dragon-Dragon"}
+	},
+	Callback = function(sfs5) SecFruitStore5 = sfs5 return end
+}
+
+StoreUI:Toggle{
+	Name = "Auto Store Fruit Selected",
+	StartingState = false,
+	Description = "Store Fruit Selected",
+	Callback = function(asfs) AutoStoreSelect = asfs end
+}
+AutoStoreSelect = false
+spawn(function() while wait() do if AutoStoreSelect then pcall(function() StoreFruit(SecFruitStore1) end) end end end)
+spawn(function() while wait() do if AutoStoreSelect then pcall(function() StoreFruit(SecFruitStore2) end) end end end)
+spawn(function() while wait() do if AutoStoreSelect then pcall(function() StoreFruit(SecFruitStore3) end) end end end)
+spawn(function() while wait() do if AutoStoreSelect then pcall(function() StoreFruit(SecFruitStore4) end) end end end)
+spawn(function() while wait() do if AutoStoreSelect then pcall(function() StoreFruit(SecFruitStore5) end) end end end)
+StoreUI:Button{
+	Name = "Fruit Inventory",
+	Description = "Open/Hide Fruit Inventory",
+	Callback = function()
+	game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible = not game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible
+	end
+}

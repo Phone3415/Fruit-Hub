@@ -102,6 +102,18 @@ Tab:Button{
 	game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible = not game.Players.LocalPlayer.PlayerGui.Main.FruitInventory.Visible
 	end
 }
+if game.PlaceId == 7449423635 then
+Tab:Toggle{
+	Name = "Bring Real Fruit[Only in Third Sea]",
+	StartingState = false,
+	Description = "Bring Real Fruit",
+	Callback = function(brf) BringRealFruit = brf end
+}
+BringRealFruit = false
+spawn(function() while wait() do if BringRealFruit then pcall(function() game:GetService("Workspace").AppleSpawner.Apple.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end) end end end)
+spawn(function() while wait() do if BringRealFruit then pcall(function() game:GetService("Workspace").PineappleSpawner.Pineapple.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end) end end end)
+spawn(function() while wait() do if BringRealFruit then pcall(function() game:GetService("Workspace").BananaSpawner.Banana.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end) end end end)
+end
 
 local DropFruit = GUI:Tab{
 	Name = "DropFruit Tab",

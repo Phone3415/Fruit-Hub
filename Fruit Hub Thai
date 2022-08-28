@@ -76,19 +76,22 @@ Tab:Button{
 	Callback = function()
 	if game.PlaceId == 7449423635 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame * CFrame.new(0,7,0)
-		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12466.28515625, 375.2577209472656, -7544.80615234375)
 	end
 		if game.PlaceId == 4442272183 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame * CFrame.new(0,7,0)
-		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6508.55810546875, 83.53028106689453, -132.83953857421875)
 	end
 	if game.PlaceId == 2753915549 then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame * CFrame.new(0,7,0)
-		game:GetService("Workspace")["Fruit "].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Fruit "].Handle.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61172.35546875, -1.3027108907699585, 1881.1717529296875)
 	end
@@ -221,6 +224,49 @@ spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName2
 spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName3) end) end end end)
 spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName4) end) end end end)
 spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName5) end) end end end)
+
+DropFruit:Toggle{
+	Name = "Auto Drop All",
+	StartingState = false,
+	Description = "Auto Drop All Fruit",
+	Callback = function(autodropal) AutoDropAll = autodropal end
+}
+AutoDropAll = false
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Bomb Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Spike Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Chop Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Spring Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Kilo Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Smoke Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Spin Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Flame Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Bird: Falcon Fruit") end) end end end)
+--GoodFruit
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Ice Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Sand Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Dark Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Revive Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Diamond Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Light Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Love Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Rubber Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Barrier Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Magma Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Door Fruit") end) end end end)
+--1M+
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Quake Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Human: Buddha Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("String Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Bird: Phoenix Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Rumble Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Paw Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Gravity Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Dought Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Shadow Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Venom Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Control Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Soul Fruit") end) end end end)
+spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Dragon Fruit") end) end end end)
 
 local EatFruit = GUI:Tab{
 	Name = "EatFruit Tab",

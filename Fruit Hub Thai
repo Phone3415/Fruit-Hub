@@ -45,28 +45,41 @@ game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Ch
 	end
 }
 
-Tab:Button{
-	Name = "วาปผล",
-	Description = "วาปไปหาผลที่เลือก",
-	Callback = function()
+function TpFruit(Fruit)
 	if game.PlaceId == 7449423635 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame * CFrame.new(0,7,0)
-		game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruit].Handle.CFrame * CFrame.new(0,7,0)
+		game:GetService("Workspace")[Fruit].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12466.28515625, 375.2577209472656, -7544.80615234375)
 	end
 		if game.PlaceId == 4442272183 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame * CFrame.new(0,7,0)
-		game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruit].Handle.CFrame * CFrame.new(0,7,0)
+		game:GetService("Workspace")[Fruit].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6508.55810546875, 83.53028106689453, -132.83953857421875)
 	end
 	if game.PlaceId == 2753915549 then
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruits].Handle.CFrame * CFrame.new(0,7,0)
-		game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[Fruit].Handle.CFrame * CFrame.new(0,7,0)
+		game:GetService("Workspace")[Fruit].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 		wait(0.3)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61172.35546875, -1.3027108907699585, 1881.1717529296875)
-	end
+	end	
+end
+
+Tab:Button{
+	Name = "วาปผล",
+	Description = "วาปไปหาผลที่เลือก",
+	Callback = function()
+	local distanceF = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - game.Workspace[Fruits].Handle.Position).Magnitude
+if BringFruit == false and distanceF >= 250 then
+TpFruit(Fruits)
+end
+if BringFruit == false and distanceF <= 249 then
+game.Workspace[Fruits].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end
+if BringFruit == true then
+TpFruit(Fruits)
+end
 	end
 }
 
@@ -117,156 +130,6 @@ spawn(function() while wait() do if BringRealFruit then pcall(function() game:Ge
 spawn(function() while wait() do if BringRealFruit then pcall(function() game:GetService("Workspace").PineappleSpawner.Pineapple.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end) end end end)
 spawn(function() while wait() do if BringRealFruit then pcall(function() game:GetService("Workspace").BananaSpawner.Banana.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end) end end end)
 end
-
-
-function dropf(namefdrop)
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(namefdrop))
-local args = {
-    [1] = "Drop"
-}
-game.Players.LocalPlayer.Character:FindFirstChild(namefdrop).EatRemote:InvokeServer(unpack(args))
-end
-
-
-local DropFruit = GUI:Tab{
-	Name = "DropFruit Tab",
-	Icon = "rbxassetid://10713204965"
-}
-local DropFruit1 = DropFruit:Dropdown{
-	Name = "โยนผล",
-	StartingText = "เลือก",
-	Description = "เลือกผลที่จะโยน",
-	Items = {
-		--BombtoIce
-		{"ระเบิด", "Bomb Fruit"},{"หนาม","Spike Fruit"},{"แยกส่วน", "Chop Fruit"},{"สปริง", "Spring Fruit"},{"กิโล","Kilo Fruit"},{"ควัน", "Smoke Fruit"},{"ใบพัด", "Spin Fruit"},{"ไฟ", "Flame Fruit"},{"ฟอลค่อน","Bird: Falcon Fruit"},{"น้ำแข็ง","Ice Fruit"},
-		--SandtoDoor
-		{"ทราย","Sand Fruit"},{"มืด","Dark Fruit"},{"คืนชีพ","Revive Fruit"},{"เพชร","Diamond Fruit"},{"แสง","Light Fruit"},{"ความรัก","Love Fruit"},{"ยาง","Rubber Fruit"},{"บาเรียย์","Barrier Fruit"},{"แม็กม่า","Magma Fruit"},{"ประตู","Door Fruit"},
-		--QuaketoVenom
-		{"สั่น","Quake Fruit"},{"พระ","Human: Buddha Fruit"},{"ด้าย","String Fruit"},{"ฟีนิกซ์","Bird: Phoenix Fruit"},{"สายฟ้า","Rumble Fruit"},{"ตีนหมี","Paw Fruit"},{"แรงโน้มถ่วง","Gravity Fruit"},{"โมจิ","Dough Fruit"},{"เงา","Shadow Fruit"},{"พิษ","Venom Fruit"},
-		--ControltoDragon
-		{"ผ่าตัด","Control Fruit"},{"วิญญาณ","Soul Fruit"},{"มังกร","Dragon Fruit"}
-	},
-	Callback = function(dpfruit1) DFName1 = dpfruit1 return end
-}
-local DropFruit2 = DropFruit:Dropdown{
-	Name = "โยนผล",
-	StartingText = "เลือก",
-	Description = "เลือกผลที่จะโยน",
-	Items = {
-		--BombtoIce
-		{"ระเบิด", "Bomb Fruit"},{"หนาม","Spike Fruit"},{"แยกส่วน", "Chop Fruit"},{"สปริง", "Spring Fruit"},{"กิโล","Kilo Fruit"},{"ควัน", "Smoke Fruit"},{"ใบพัด", "Spin Fruit"},{"ไฟ", "Flame Fruit"},{"ฟอลค่อน","Bird: Falcon Fruit"},{"น้ำแข็ง","Ice Fruit"},
-		--SandtoDoor
-		{"ทราย","Sand Fruit"},{"มืด","Dark Fruit"},{"คืนชีพ","Revive Fruit"},{"เพชร","Diamond Fruit"},{"แสง","Light Fruit"},{"ความรัก","Love Fruit"},{"ยาง","Rubber Fruit"},{"บาเรียย์","Barrier Fruit"},{"แม็กม่า","Magma Fruit"},{"ประตู","Door Fruit"},
-		--QuaketoVenom
-		{"สั่น","Quake Fruit"},{"พระ","Human: Buddha Fruit"},{"ด้าย","String Fruit"},{"ฟีนิกซ์","Bird: Phoenix Fruit"},{"สายฟ้า","Rumble Fruit"},{"ตีนหมี","Paw Fruit"},{"แรงโน้มถ่วง","Gravity Fruit"},{"โมจิ","Dough Fruit"},{"เงา","Shadow Fruit"},{"พิษ","Venom Fruit"},
-		--ControltoDragon
-		{"ผ่าตัด","Control Fruit"},{"วิญญาณ","Soul Fruit"},{"มังกร","Dragon Fruit"}
-	},
-	Callback = function(dpfruit2) DFName2 = dpfruit2 return end
-}
-local DropFruit3 = DropFruit:Dropdown{
-	Name = "โยนผล",
-	StartingText = "เลือก",
-	Description = "เลือกผลที่จะโยน",
-	Items = {
-		--BombtoIce
-		{"ระเบิด", "Bomb Fruit"},{"หนาม","Spike Fruit"},{"แยกส่วน", "Chop Fruit"},{"สปริง", "Spring Fruit"},{"กิโล","Kilo Fruit"},{"ควัน", "Smoke Fruit"},{"ใบพัด", "Spin Fruit"},{"ไฟ", "Flame Fruit"},{"ฟอลค่อน","Bird: Falcon Fruit"},{"น้ำแข็ง","Ice Fruit"},
-		--SandtoDoor
-		{"ทราย","Sand Fruit"},{"มืด","Dark Fruit"},{"คืนชีพ","Revive Fruit"},{"เพชร","Diamond Fruit"},{"แสง","Light Fruit"},{"ความรัก","Love Fruit"},{"ยาง","Rubber Fruit"},{"บาเรียย์","Barrier Fruit"},{"แม็กม่า","Magma Fruit"},{"ประตู","Door Fruit"},
-		--QuaketoVenom
-		{"สั่น","Quake Fruit"},{"พระ","Human: Buddha Fruit"},{"ด้าย","String Fruit"},{"ฟีนิกซ์","Bird: Phoenix Fruit"},{"สายฟ้า","Rumble Fruit"},{"ตีนหมี","Paw Fruit"},{"แรงโน้มถ่วง","Gravity Fruit"},{"โมจิ","Dough Fruit"},{"เงา","Shadow Fruit"},{"พิษ","Venom Fruit"},
-		--ControltoDragon
-		{"ผ่าตัด","Control Fruit"},{"วิญญาณ","Soul Fruit"},{"มังกร","Dragon Fruit"}
-	},
-	Callback = function(dpfruit3) DFName3 = dpfruit3 return end
-}
-local DropFruit4 = DropFruit:Dropdown{
-	Name = "โยนผล",
-	StartingText = "เลือก",
-	Description = "เลือกผลที่จะโยน",
-	Items = {
-		--BombtoIce
-		{"ระเบิด", "Bomb Fruit"},{"หนาม","Spike Fruit"},{"แยกส่วน", "Chop Fruit"},{"สปริง", "Spring Fruit"},{"กิโล","Kilo Fruit"},{"ควัน", "Smoke Fruit"},{"ใบพัด", "Spin Fruit"},{"ไฟ", "Flame Fruit"},{"ฟอลค่อน","Bird: Falcon Fruit"},{"น้ำแข็ง","Ice Fruit"},
-		--SandtoDoor
-		{"ทราย","Sand Fruit"},{"มืด","Dark Fruit"},{"คืนชีพ","Revive Fruit"},{"เพชร","Diamond Fruit"},{"แสง","Light Fruit"},{"ความรัก","Love Fruit"},{"ยาง","Rubber Fruit"},{"บาเรียย์","Barrier Fruit"},{"แม็กม่า","Magma Fruit"},{"ประตู","Door Fruit"},
-		--QuaketoVenom
-		{"สั่น","Quake Fruit"},{"พระ","Human: Buddha Fruit"},{"ด้าย","String Fruit"},{"ฟีนิกซ์","Bird: Phoenix Fruit"},{"สายฟ้า","Rumble Fruit"},{"ตีนหมี","Paw Fruit"},{"แรงโน้มถ่วง","Gravity Fruit"},{"โมจิ","Dough Fruit"},{"เงา","Shadow Fruit"},{"พิษ","Venom Fruit"},
-		--ControltoDragon
-		{"ผ่าตัด","Control Fruit"},{"วิญญาณ","Soul Fruit"},{"มังกร","Dragon Fruit"}
-	},
-	Callback = function(dpfruit4) DFName4 = dpfruit4 return end
-}
-local DropFruit5 = DropFruit:Dropdown{
-	Name = "โยนผล",
-	StartingText = "เลือก",
-	Description = "เลือกผลที่จะโยน",
-	Items = {
-		--BombtoIce
-		{"ระเบิด", "Bomb Fruit"},{"หนาม","Spike Fruit"},{"แยกส่วน", "Chop Fruit"},{"สปริง", "Spring Fruit"},{"กิโล","Kilo Fruit"},{"ควัน", "Smoke Fruit"},{"ใบพัด", "Spin Fruit"},{"ไฟ", "Flame Fruit"},{"ฟอลค่อน","Bird: Falcon Fruit"},{"น้ำแข็ง","Ice Fruit"},
-		--SandtoDoor
-		{"ทราย","Sand Fruit"},{"มืด","Dark Fruit"},{"คืนชีพ","Revive Fruit"},{"เพชร","Diamond Fruit"},{"แสง","Light Fruit"},{"ความรัก","Love Fruit"},{"ยาง","Rubber Fruit"},{"บาเรียย์","Barrier Fruit"},{"แม็กม่า","Magma Fruit"},{"ประตู","Door Fruit"},
-		--QuaketoVenom
-		{"สั่น","Quake Fruit"},{"พระ","Human: Buddha Fruit"},{"ด้าย","String Fruit"},{"ฟีนิกซ์","Bird: Phoenix Fruit"},{"สายฟ้า","Rumble Fruit"},{"ตีนหมี","Paw Fruit"},{"แรงโน้มถ่วง","Gravity Fruit"},{"โมจิ","Dough Fruit"},{"เงา","Shadow Fruit"},{"พิษ","Venom Fruit"},
-		--ControltoDragon
-		{"ผ่าตัด","Control Fruit"},{"วิญญาณ","Soul Fruit"},{"มังกร","Dragon Fruit"}
-	},
-	Callback = function(dpfruit5) DFName5 = dpfruit5 return end
-}
-DropFruit:Toggle{
-	Name = "โยนอัตโนมัติ",
-	StartingState = false,
-	Description = "โยนผลที่เลือกอัตโนมัติ",
-	Callback = function(autodrop) AutoDrop = autodrop end
-}
-AutoDrop = false
-spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName1) end) end end end)
-spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName2) end) end end end)
-spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName3) end) end end end)
-spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName4) end) end end end)
-spawn(function() while wait() do if AutoDrop then pcall(function() dropf(DFName5) end) end end end)
-
-DropFruit:Toggle{
-	Name = "Auto Drop All",
-	StartingState = false,
-	Description = "Auto Drop All Fruit",
-	Callback = function(autodropal) AutoDropAll = autodropal end
-}
-AutoDropAll = false
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Bomb Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Spike Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Chop Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Spring Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Kilo Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Smoke Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Spin Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Flame Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Bird: Falcon Fruit") end) end end end)
---GoodFruit
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Ice Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Sand Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Dark Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Revive Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Diamond Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Light Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Love Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Rubber Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Barrier Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Magma Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Door Fruit") end) end end end)
---1M+
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Quake Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Human: Buddha Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("String Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Bird: Phoenix Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Rumble Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Paw Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Gravity Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Dought Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Shadow Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Venom Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Control Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Soul Fruit") end) end end end)
-spawn(function() while wait() do if AutoDropAll then pcall(function() dropf("Dragon Fruit") end) end end end)
 
 local EatFruit = GUI:Tab{
 	Name = "EatFruit Tab",
@@ -390,6 +253,40 @@ spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backp
 spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Control Fruit") and StoreAll then pcall(function() StoreFruit("Control-Control") end) end end end)
 spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Soul Fruit") and StoreAll then pcall(function() StoreFruit("Soul-Soul") end) end end end)
 spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Fruit") and StoreAll then pcall(function() StoreFruit("Dragon-Dragon") end) end end end)
+---------------------
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Bomb Fruit") and StoreAll then pcall(function() StoreFruit("Bomb-Bomb") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Spike Fruit") and StoreAll then pcall(function() StoreFruit("Spike-Spike") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Chop Fruit") and StoreAll then pcall(function() StoreFruit("Chop-Chop") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Spring Fruit") and StoreAll then pcall(function() StoreFruit("Spring-Spring") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Kilo Fruit") and StoreAll then pcall(function() StoreFruit("Kilo-Kilo") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Smoke Fruit") and StoreAll then pcall(function() StoreFruit("Smoke-Smoke") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Spin Fruit") and StoreAll then pcall(function() StoreFruit("Spin-Spin") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Flame Fruit") and StoreAll then pcall(function() StoreFruit("Flame-Flame") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Bird: Falcon Fruit") and StoreAll then pcall(function() StoreFruit("Bird-Bird: Falcon") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Ice Fruit") and StoreAll then pcall(function() StoreFruit("Ice-Ice") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Sand Fruit") and StoreAll then pcall(function() StoreFruit("Sand-Sand") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dark Fruit") and StoreAll then pcall(function() StoreFruit("Dark-Dark") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Revive Fruit") and StoreAll then pcall(function() StoreFruit("Revive-Revive") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Diamond Fruit") and StoreAll then pcall(function() StoreFruit("Diamond-Diamond") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Light Fruit") and StoreAll then pcall(function() StoreFruit("Light-Light") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Love Fruit") and StoreAll then pcall(function() StoreFruit("Love-Love") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rubber Fruit") and StoreAll then pcall(function() StoreFruit("Rubber-Rubber") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Barrier Fruit") and StoreAll then pcall(function() StoreFruit("Barrier-Barrier") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Magma Fruit") and StoreAll then pcall(function() StoreFruit("Magma-Magma") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Door Fruit") and StoreAll then pcall(function() StoreFruit("Door-Door") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Quake Fruit") and StoreAll then pcall(function() StoreFruit("Quake-Quake") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Human: Buddha Fruit") and StoreAll then pcall(function() StoreFruit("Human-Human: Buddha") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("String Fruit") and StoreAll then pcall(function() StoreFruit("String-String") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Bird: Phoenix Fruit") and StoreAll then pcall(function() StoreFruit("Bird-Bird: Phoenix") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rumble Fruit") and StoreAll then pcall(function() StoreFruit("Rumble-Rumble") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Paw Fruit") and StoreAll then pcall(function() StoreFruit("Paw-Paw") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Gravity Fruit") and StoreAll then pcall(function() StoreFruit("Gravity-Gravity") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dough Fruit") and StoreAll then pcall(function() StoreFruit("Dough-Dough") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Shadow Fruit") and StoreAll then pcall(function() StoreFruit("Shadow-Shadow") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Venom Fruit") and StoreAll then pcall(function() StoreFruit("Venom-Venom") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Control Fruit") and StoreAll then pcall(function() StoreFruit("Control-Control") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Soul Fruit") and StoreAll then pcall(function() StoreFruit("Soul-Soul") end) end end end)
+spawn(function() while wait() do if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dragon Fruit") and StoreAll then pcall(function() StoreFruit("Dragon-Dragon") end) end end end)
 
 local StoreSelect1 = StoreUI:Dropdown{
 	Name = "เลือกผลที่จะเก็บ",

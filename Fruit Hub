@@ -1,3 +1,13 @@
+local cs = game:GetService("CollectionService")
+function IsFruit()
+for i,v in pairs(game.Workspace:GetChildren())	do
+	if string.find(game.Workspace[v.Name].Name," Fruit") then
+		cs:AddTag(v,"IsFruit")
+end
+end
+end
+IsFruit()
+local Fruits = cs:GetTagged("IsFruit")
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 local GUI = Mercury:Create{
     Name = "Fruit Hub",
@@ -45,6 +55,15 @@ game:GetService("Workspace")[Fruits].Handle.CFrame = game.Players.LocalPlayer.Ch
 	end
 	end
 }
+Tab:Toggle{
+	Name = "Auto Bring",
+	StartingState = false,
+	Description = "Auto Bring Fruit Nearest",
+	Callback = function(abfn) AutoBring = abfn end
+}
+AutoBring = false
+
+spawn(function() while wait() do if AutoBring and BringFruit == false then pcall(function() IsFruit() for i,v in pairs(Fruits) do local distanceF = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - game.Workspace[v.Name].Handle.Position).Magnitude if distanceF <= 250 then game.Workspace[v.Name].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end end end) end end end)
 
 function TpFruit(Fruit)
 	if game.PlaceId == 7449423635 then

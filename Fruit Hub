@@ -63,7 +63,7 @@ Tab:Toggle{
 }
 AutoBring = false
 
-spawn(function() while wait() do if AutoBring and BringFruit == false then pcall(function() IsFruit() for i,v in pairs(IsFruits) do local distanceF = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - game.Workspace[v.Name].Handle.Position).Magnitude if distanceF <= 250 then game.Workspace[v.Name].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end end end) end end end)
+spawn(function() while wait() do if AutoBring and BringFruit == false then pcall(function() IsFruit() local IsFruits = cs:GetTagged("IsFruit") for i,v in pairs(IsFruits) do local distanceF = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - game.Workspace[v.Name].Handle.Position).Magnitude if distanceF <= 250 then game.Workspace[v.Name].Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame end end end) end end end)
 
 function TpFruit(Fruit)
 	if game.PlaceId == 7449423635 then
